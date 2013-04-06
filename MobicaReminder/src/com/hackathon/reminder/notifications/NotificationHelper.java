@@ -9,14 +9,10 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Builder;
 
 public class NotificationHelper {
-	
-	private static final int NOTIFICATION_ID  	= 0xFFFF;
 	private static final int REQUEST_CODE   	= 0xFFFE;
 	
-	private NotificationHelper(){
-		
-	}
-	
+	private NotificationHelper(){}
+
 	public static void ShowNotification(Context context, AbstractNotification notification){
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse(notification.getURL()));
@@ -29,6 +25,6 @@ public class NotificationHelper {
 		    .setWhen(System.currentTimeMillis())
 		    .setAutoCancel(true);
 		NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-		notificationManager.notify(NotificationHelper.NOTIFICATION_ID, mBuilder.build());
+		notificationManager.notify(notification.getId(), mBuilder.build());
 	}
 }

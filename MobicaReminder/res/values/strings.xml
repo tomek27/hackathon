@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MobicaReminder</string>
+    <string name="app_name">Mobica Reminder</string>
     <string name="hello_world">Hello world!</string>
 
     <string name="fifty_percent_category_title">50% Settings</string>

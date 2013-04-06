@@ -4,8 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-
 import com.hackathon.reminder.notifications.AbstractNotification;
 import com.hackathon.reminder.notifications.NotificationHelper;
 
@@ -16,7 +14,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 	
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.e(ALARM_RECIVE_ACTION, "OK");
+//		Log.e(ALARM_RECIVE_ACTION, "OK");
 		Bundle bundle = intent.getExtras();
 		if(bundle != null){
 			AbstractNotification notification = (AbstractNotification)bundle.getSerializable(SERIALIZE_ID);

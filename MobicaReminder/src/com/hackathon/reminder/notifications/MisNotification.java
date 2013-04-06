@@ -2,9 +2,6 @@ package com.hackathon.reminder.notifications;
 
 public class MisNotification extends AbstractNotification {
 
-	/**
-	 * Auto generated
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -21,4 +18,9 @@ public class MisNotification extends AbstractNotification {
 	public String getText() {
 		return "Mobica Information System";
 	}
+
+    @Override
+    public int getId() {
+        return 0xffff;
+    }
 }

@@ -4,8 +4,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.widget.Toast;
+import android.util.Log;
+import com.hackathon.reminder.strategies.AlarmPreferenceStrategy;
+import com.hackathon.reminder.strategies.FiftyPreferenceStrategy;
+import com.hackathon.reminder.strategies.MisPreferenceStrategy;
+import com.hackathon.reminder.strategies.TCSPrefernceStrategy;
 import roboguice.activity.RoboPreferenceActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SettingsActivity extends RoboPreferenceActivity {
     private static final String PREFS_NAME = "defaults";
@@ -18,9 +25,19 @@ public class SettingsActivity extends RoboPreferenceActivity {
     }
 
     public static class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+        private static String TAG = SettingsFragment.class.getSimpleName();
+
+        private List<AlarmPreferenceStrategy> alarmStrategies;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            // create list of strategies to handle notification create and cancel
+            alarmStrategies = new ArrayList<AlarmPreferenceStrategy>();
+            alarmStrategies.add(new MisPreferenceStrategy());
+            alarmStrategies.add(new TCSPrefernceStrategy());
+            alarmStrategies.add(new FiftyPreferenceStrategy());
 
             getPreferenceManager().setSharedPreferencesName(PREFS_NAME);
             PreferenceManager.setDefaultValues(getActivity(), PREFS_NAME, MODE_PRIVATE, R.xml.fragment_preferences, false);
@@ -45,7 +62,13 @@ public class SettingsActivity extends RoboPreferenceActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            Toast.makeText(getActivity(), "Test key = " + key, Toast.LENGTH_SHORT).show();
+            for (AlarmPreferenceStrategy strategy : alarmStrategies) {
+                if (strategy.accept(key)) {
+                    strategy.process(getActivity(), sharedPreferences, key);
+                    break;
+                }
+            }
+            Log.e(TAG, "onSharedPreferenceChanged no strategy for key: " + key);
         }
     }
 }
