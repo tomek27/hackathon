@@ -15,8 +15,11 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import roboguice.activity.RoboActivity;
+import roboguice.inject.ContentView;
 
-public class MainActivity extends Activity implements OnClickListener {
+@ContentView(R.layout.activity_main)
+public class MainActivity extends RoboActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +71,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 666, intent, 0);
 		notification.setLatestEventInfo(this, "Name 2", contentIntent);
 		mNM.notify(666, notification);*/
+	}
 	}
 }
