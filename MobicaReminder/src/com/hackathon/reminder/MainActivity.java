@@ -1,22 +1,14 @@
 package com.hackathon.reminder;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import roboguice.activity.RoboActivity;
+import roboguice.inject.ContentView;
 
-public class MainActivity extends Activity {
+@ContentView(R.layout.activity_main)
+public class MainActivity extends RoboActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-
 }
