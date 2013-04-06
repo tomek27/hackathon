@@ -1,13 +1,14 @@
 package com.hackathon.reminder;
 
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 import roboguice.activity.RoboPreferenceActivity;
 
 public class SettingsActivity extends RoboPreferenceActivity {
+    private static final String PREFS_NAME = "defaults";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,9 @@ public class SettingsActivity extends RoboPreferenceActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
-//            PreferenceManager.setDefaultValues(getActivity(), R., false);
+            getPreferenceManager().setSharedPreferencesName(PREFS_NAME);
+            PreferenceManager.setDefaultValues(getActivity(), PREFS_NAME, MODE_PRIVATE, R.xml.fragment_preferences, false);
+
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_preferences);
         }

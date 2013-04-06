@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="fifty_percent_once_a_month_default">true</bool>
-    <bool name="mis_once_a_day_default">false</bool>
-    <bool name="mis_once_a_month_default">true</bool>
-    <bool name="tcs_once_a_month_default">false</bool>
-</resources>

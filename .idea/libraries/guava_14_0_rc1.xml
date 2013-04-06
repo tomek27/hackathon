@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="guava-14.0-rc1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MobicaReminder/libs/guava-14.0-rc1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
