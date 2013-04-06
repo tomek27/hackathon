@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/fifty_percent_category_title">
+
+        <CheckBoxPreference
+                android:key="fifty_percent_notify_checkbox_preference"
+                android:defaultValue="true"
+                android:title="@string/fifty_percent_once_a_month_title"
+                android:summary="@string/fifty_percent_once_a_month_desc"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="@string/mis_category_title">
+        <CheckBoxPreference
+                android:key="mis_notify_daily_checkbox_preference"
+                android:defaultValue="false"
+                android:title="@string/mis_once_a_day_title"
+                android:summary="@string/mis_once_a_day_desc"/>
+        <CheckBoxPreference
+                android:key="mis_notify_monthly_checkbox_preference"
+                android:defaultValue="true"
+                android:title="@string/mis_once_a_month_title"
+                android:summary="@string/mis_once_a_month_desc"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="@string/tcs_category_title">
+        <CheckBoxPreference
+                android:key="mis_notify_daily_checkbox_preference"
+                android:defaultValue="false"
+                android:title="@string/tcs_once_a_month_title"
+                android:summary="@string/tcs_once_a_month_desc"/>
+    </PreferenceCategory>
+</PreferenceScreen>

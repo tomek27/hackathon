@@ -3,6 +3,19 @@
 
     <string name="app_name">MobicaReminder</string>
     <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+
+    <string name="fifty_percent_category_title">50% Settings</string>
+    <string name="fifty_percent_once_a_month_title">Notify once a month.</string>
+    <string name="fifty_percent_once_a_month_desc">App will show a notification to fill 50% once a month.</string>
+
+    <string name="mis_category_title">MIS Settings</string>
+    <string name="mis_once_a_day_title">Notify each day.</string>
+    <string name="mis_once_a_day_desc">App will show a notification each day to fill MIS.</string>
+    <string name="mis_once_a_month_title">Notify each week.</string>
+    <string name="mis_once_a_month_desc">App will show a notification at the end of the week to fill MIS.</string>
+
+    <string name="tcs_category_title">Travel Cost Settlement Settings</string>
+    <string name="tcs_once_a_month_title">Notify once a month.</string>
+    <string name="tcs_once_a_month_desc">App will show a notification at the end of the month to fill Travel Cost Settlement</string>
 
 </resources>
