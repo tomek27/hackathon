@@ -12,6 +12,6 @@ public abstract class AbstractNotification implements Serializable {
 	public abstract int getId();
 
 	public int getRid(){
-		return R.drawable.ic_launcher;
+		return R.drawable.mobica_icon;
 	}
 }

@@ -19,7 +19,7 @@ public class MisPreferenceStrategy implements AlarmPreferenceStrategy {
     public boolean process(Context context, SharedPreferences sharedPreferences, String key) {
         boolean checked = sharedPreferences.getBoolean(key, false);
         if(checked) {
-            Alarms.create(context, new MisNotification(), REQUEST_ID, AlarmManager.INTERVAL_DAY * 25);
+            Alarms.create(context, new MisNotification(), REQUEST_ID, AlarmManager.INTERVAL_DAY * 6);
         } else {
             Alarms.cancel(context, REQUEST_ID);
         }
